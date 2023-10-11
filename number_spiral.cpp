@@ -9,16 +9,19 @@ int main(int argc, char const *argv[])
 	cin >> tt;
 
 	while(tt--){
-		int row, column;
-		std::vector<std::vector<int> arr;
+		ll row, col;
+		cin >> row >> col;
 
-		cin >> row >> column;
-
-		int maxIter = max(row,column) * max(row,column);
-
-		for (int i = 0; i < maxIter; ++i)
-		{
-			
+		if(row == col) cout << row*row - (row-1) << endl;
+		else if(row>col){
+			ll diag = row*row - (row-1);
+			if(row%2!=0) cout << diag - (row-col) << endl;
+			else cout << diag + (row-col) << endl;
+		}
+		else{
+			ll diag = col*col - (col-1);
+			if(col%2!=0) cout << diag + (col-row) << endl;
+			else cout << diag - (col-row) << endl;
 		}
 
 	}
